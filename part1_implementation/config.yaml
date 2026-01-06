@@ -1,0 +1,39 @@
+
+seed: 42
+
+device: "cuda" 
+
+
+model:
+  vocab_size: 30522       
+  embed_dim: 256          
+  num_heads: 8            
+  ff_dim: 512            
+  num_layers: 4           
+  num_classes: 2          
+  dropout: 0.1            
+  max_length: 128         
+
+dataset:
+  batch_size: 32
+  max_length: 128         
+  num_workers: 0          
+
+
+training:
+  epochs: 10
+  lr: 1e-4                
+  weight_decay: 0.01      
+  label_smoothing: 0.1    
+  early_stopping_patience: 3
+  max_grad_norm: 1.0      
+  scheduler_t0: 5         
+
+
+logging:
+  log_dir: "runs"                    
+  checkpoint_dir: "checkpoints"    
+  attention_dir: "attention_plots"   
+  log_every: 100                    
+  save_every: 5                    
+  visualize_every: 1             
